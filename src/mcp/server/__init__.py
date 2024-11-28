@@ -64,7 +64,7 @@ import contextvars
 import logging
 import warnings
 from collections.abc import Awaitable, Callable
-from typing import Any, Sequence
+from typing import Any, Optional, Sequence
 
 from anyio.streams.memory import MemoryObjectReceiveStream, MemoryObjectSendStream
 from pydantic import AnyUrl
@@ -360,6 +360,22 @@ class Server:
 
         return decorator
 
+    def cancellation_notification(self):
+        def decorator(
+            func: Callable[[Optional[int], Optional[str]], Awaitable[None]],
+        ):
+            logger.debug("Registering handler for ProgressNotification")
+
+            async def handler(req: types.CancellationNotification):
+                await func(
+                    req.params.requestId, req.params.reason
+                )
+
+            self.notification_handlers[types.CancellationNotification] = handler
+            return func
+
+        return decorator
+    
     def completion(self):
         """Provides completions for prompts and resource templates"""
 
