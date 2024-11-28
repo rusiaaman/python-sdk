@@ -1,4 +1,4 @@
-from typing import Any, Generic, Literal, TypeVar
+from typing import Any, Generic, Literal, Optional, TypeVar
 
 from pydantic import BaseModel, ConfigDict, FileUrl, RootModel
 from pydantic.networks import AnyUrl
@@ -323,6 +323,21 @@ class ProgressNotificationParams(NotificationParams):
     total: float | None = None
     """Total number of items to process (or total progress required), if known."""
     model_config = ConfigDict(extra="allow")
+
+
+class CancelledParams(BaseModel):
+    requestId: Optional[int] = None
+    reason: Optional[str] = ""
+
+
+class CancellationNotification(Notification):
+    """
+    An out-of-band notification used to inform the receiver of a progress update for a
+    long-running request.
+    """
+
+    method: Literal["cancelled"]
+    params: CancelledParams
 
 
 class ProgressNotification(Notification):
@@ -997,7 +1012,10 @@ class ClientRequest(
 
 class ClientNotification(
     RootModel[
-        ProgressNotification | InitializedNotification | RootsListChangedNotification
+        ProgressNotification
+        | InitializedNotification
+        | RootsListChangedNotification
+        | CancellationNotification
     ]
 ):
     pass
@@ -1019,6 +1037,7 @@ class ServerNotification(
         | ResourceListChangedNotification
         | ToolListChangedNotification
         | PromptListChangedNotification
+        | CancellationNotification
     ]
 ):
     pass
