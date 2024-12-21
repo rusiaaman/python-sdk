@@ -4,10 +4,10 @@ import sys
 
 import anyio
 
-from mcp.server.models import InitializationOptions
-from mcp.server.session import ServerSession
-from mcp.server.stdio import stdio_server
-from mcp.types import ServerCapabilities
+from mcp_wcgw.server.models import InitializationOptions
+from mcp_wcgw.server.session import ServerSession
+from mcp_wcgw.server.stdio import stdio_server
+from mcp_wcgw.types import ServerCapabilities
 
 if not sys.warnoptions:
     import warnings

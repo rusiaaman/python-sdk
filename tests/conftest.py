@@ -1,9 +1,9 @@
 import pytest
 from pydantic import AnyUrl
 
-from mcp.server import Server
-from mcp.server.models import InitializationOptions
-from mcp.types import Resource, ServerCapabilities
+from mcp_wcgw.server import Server
+from mcp_wcgw.server.models import InitializationOptions
+from mcp_wcgw.types import Resource, ServerCapabilities
 
 TEST_INITIALIZATION_OPTIONS = InitializationOptions(
     server_name="my_mcp_server",

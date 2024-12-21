@@ -9,9 +9,9 @@ from typing import AsyncGenerator
 import anyio
 from anyio.streams.memory import MemoryObjectReceiveStream, MemoryObjectSendStream
 
-from mcp.client.session import ClientSession
-from mcp.server import Server
-from mcp.types import JSONRPCMessage
+from mcp_wcgw.client.session import ClientSession
+from mcp_wcgw.server import Server
+from mcp_wcgw.types import JSONRPCMessage
 
 MessageStream = tuple[
     MemoryObjectReceiveStream[JSONRPCMessage | Exception],

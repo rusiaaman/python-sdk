@@ -48,14 +48,14 @@ from starlette.requests import Request
 from starlette.responses import Response
 from starlette.types import Receive, Scope, Send
 
-import mcp.types as types
+import mcp_wcgw.types as types
 
 logger = logging.getLogger(__name__)
 
 
 class SseServerTransport:
     """
-    SSE server transport for MCP. This class provides _two_ ASGI applications,
+    SSE server transport for mcp_wcgw This class provides _two_ ASGI applications,
     suitable to be used with a framework like Starlette and a server like Hypercorn:
 
         1. connect_sse() is an ASGI application which receives incoming GET requests,

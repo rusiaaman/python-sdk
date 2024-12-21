@@ -1,4 +1,4 @@
-from mcp.types import (
+from mcp_wcgw.types import (
     LATEST_PROTOCOL_VERSION,
     ClientRequest,
     JSONRPCMessage,

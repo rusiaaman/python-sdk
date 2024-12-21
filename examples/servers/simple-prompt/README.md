@@ -25,8 +25,8 @@ Using the MCP client, you can retrieve the prompt like this using the STDIO tran
 
 ```python
 import asyncio
-from mcp.client.session import ClientSession
-from mcp.client.stdio import StdioServerParameters, stdio_client
+from mcp_wcgw.client.session import ClientSession
+from mcp_wcgw.client.stdio import StdioServerParameters, stdio_client
 
 
 async def main():

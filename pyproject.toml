@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "mcp"
+name = "mcp_wcgw"
 version = "1.1.2.dev0"
 description = "Model Context Protocol SDK"
 readme = "README.md"
@@ -40,7 +40,8 @@ Repository = "https://github.com/modelcontextprotocol/python-sdk"
 Issues = "https://github.com/modelcontextprotocol/python-sdk/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/mcp"]
+packages = ["src/mcp_wcgw"]
+
 
 [tool.pyright]
 include = ["src/mcp", "tests"]
@@ -71,4 +72,4 @@ dev-dependencies = [
 members = ["examples/servers/*"]
 
 [tool.uv.sources]
-mcp = { workspace = true }
+mcp_wcgw = { workspace = true }

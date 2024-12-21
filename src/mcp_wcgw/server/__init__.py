@@ -43,7 +43,7 @@ Usage:
 
 4. Run the server:
    async def main():
-       async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
+       async with mcp_wcgwserver.stdio.stdio_server() as (read_stream, write_stream):
            await server.run(
                read_stream,
                write_stream,
@@ -73,13 +73,13 @@ from typing import Any, Optional, Sequence
 from anyio.streams.memory import MemoryObjectReceiveStream, MemoryObjectSendStream
 from pydantic import AnyUrl
 
-import mcp.types as types
-from mcp.server.models import InitializationOptions
-from mcp.server.session import ServerSession
-from mcp.server.stdio import stdio_server as stdio_server
-from mcp.shared.context import RequestContext
-from mcp.shared.exceptions import McpError
-from mcp.shared.session import RequestResponder
+import mcp_wcgw.types as types
+from mcp_wcgw.server.models import InitializationOptions
+from mcp_wcgw.server.session import ServerSession
+from mcp_wcgw.server.stdio import stdio_server as stdio_server
+from mcp_wcgw.shared.context import RequestContext
+from mcp_wcgw.shared.exceptions import McpError
+from mcp_wcgw.shared.session import RequestResponder
 
 logger = logging.getLogger(__name__)
 

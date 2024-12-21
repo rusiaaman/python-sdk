@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 
-from mcp.shared.session import BaseSession
-from mcp.types import RequestId, RequestParams
+from mcp_wcgw.shared.session import BaseSession
+from mcp_wcgw.types import RequestId, RequestParams
 
 SessionT = TypeVar("SessionT", bound=BaseSession)
 

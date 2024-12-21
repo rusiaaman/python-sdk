@@ -6,11 +6,11 @@
 [![Specification][spec-badge]][spec-url]
 [![GitHub Discussions][discussions-badge]][discussions-url]
 
-[pypi-badge]: https://img.shields.io/pypi/v/mcp.svg
+[pypi-badge]: https://img.shields.io/pypi/v/mcp_wcgwsvg
 [pypi-url]: https://pypi.org/project/mcp/
-[mit-badge]: https://img.shields.io/pypi/l/mcp.svg
+[mit-badge]: https://img.shields.io/pypi/l/mcp_wcgwsvg
 [mit-url]: https://github.com/modelcontextprotocol/python-sdk/blob/main/LICENSE
-[python-badge]: https://img.shields.io/pypi/pyversions/mcp.svg
+[python-badge]: https://img.shields.io/pypi/pyversions/mcp_wcgwsvg
 [python-url]: https://www.python.org/downloads/
 [docs-badge]: https://img.shields.io/badge/docs-modelcontextprotocol.io-blue.svg
 [docs-url]: https://modelcontextprotocol.io
@@ -83,10 +83,10 @@ MCP servers follow a decorator approach to register handlers for MCP primitives 
 #   "mcp"
 # ]
 # ///
-from mcp.server import Server, NotificationOptions
-from mcp.server.models import InitializationOptions
-import mcp.server.stdio
-import mcp.types as types
+from mcp_wcgw.server import Server, NotificationOptions
+from mcp_wcgw.server.models import InitializationOptions
+import mcp_wcgw.server.stdio
+import mcp_wcgw.types as types
 
 # Create a server instance
 server = Server("example-server")
@@ -131,7 +131,7 @@ async def handle_get_prompt(
 
 async def run():
     # Run the server as STDIO
-    async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
+    async with mcp_wcgwserver.stdio.stdio_server() as (read_stream, write_stream):
         await server.run(
             read_stream,
             write_stream,
@@ -155,8 +155,8 @@ if __name__ == "__main__":
 **example_client.py**
 
 ```python
-from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
+from mcp_wcgw. import ClientSession, StdioServerParameters
+from mcp_wcgw.client.stdio import stdio_client
 
 # Create server parameters for stdio connection
 server_params = StdioServerParameters(

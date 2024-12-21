@@ -6,9 +6,9 @@ from urllib.parse import urlparse
 
 import anyio
 
-from mcp.client.session import ClientSession
-from mcp.client.sse import sse_client
-from mcp.client.stdio import StdioServerParameters, stdio_client
+from mcp_wcgw.client.session import ClientSession
+from mcp_wcgw.client.sse import sse_client
+from mcp_wcgw.client.stdio import StdioServerParameters, stdio_client
 
 if not sys.warnoptions:
     import warnings

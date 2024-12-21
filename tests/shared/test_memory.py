@@ -1,12 +1,12 @@
 import pytest
 from typing_extensions import AsyncGenerator
 
-from mcp.client.session import ClientSession
-from mcp.server import Server
-from mcp.shared.memory import (
+from mcp_wcgw.client.session import ClientSession
+from mcp_wcgw.server import Server
+from mcp_wcgw.shared.memory import (
     create_connected_server_and_client_session,
 )
-from mcp.types import (
+from mcp_wcgw.types import (
     EmptyResult,
 )
 

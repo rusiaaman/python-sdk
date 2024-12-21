@@ -6,7 +6,7 @@ from anyio.streams.memory import MemoryObjectReceiveStream, MemoryObjectSendStre
 from starlette.types import Receive, Scope, Send
 from starlette.websockets import WebSocket
 
-import mcp.types as types
+import mcp_wcgw.types as types
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def websocket_server(scope: Scope, receive: Receive, send: Send):
     """
-    WebSocket server transport for MCP. This is an ASGI application, suitable to be
+    WebSocket server transport for mcp_wcgw This is an ASGI application, suitable to be
     used with a framework like Starlette and a server like Hypercorn.
     """
 

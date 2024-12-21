@@ -25,7 +25,7 @@ import anyio
 import anyio.lowlevel
 from anyio.streams.memory import MemoryObjectReceiveStream, MemoryObjectSendStream
 
-import mcp.types as types
+import mcp_wcgw.types as types
 
 
 @asynccontextmanager

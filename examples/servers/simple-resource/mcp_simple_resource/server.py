@@ -1,7 +1,7 @@
 import anyio
 import click
-import mcp.types as types
-from mcp.server import AnyUrl, Server
+import mcp_wcgw.types as types
+from mcp_wcgw.server import AnyUrl, Server
 
 SAMPLE_RESOURCES = {
     "greeting": "Hello! This is a sample text resource.",
@@ -44,7 +44,7 @@ def main(port: int, transport: str) -> int:
         return SAMPLE_RESOURCES[name]
 
     if transport == "sse":
-        from mcp.server.sse import SseServerTransport
+        from mcp_wcgw.server.sse import SseServerTransport
         from starlette.applications import Starlette
         from starlette.routing import Route
 
@@ -73,7 +73,7 @@ def main(port: int, transport: str) -> int:
 
         uvicorn.run(starlette_app, host="0.0.0.0", port=port)
     else:
-        from mcp.server.stdio import stdio_server
+        from mcp_wcgw.server.stdio import stdio_server
 
         async def arun():
             async with stdio_server() as streams:

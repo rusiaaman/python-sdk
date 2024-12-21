@@ -22,9 +22,9 @@ Using the MCP client, you can retrieve resources like this using the STDIO trans
 
 ```python
 import asyncio
-from mcp.types import AnyUrl
-from mcp.client.session import ClientSession
-from mcp.client.stdio import StdioServerParameters, stdio_client
+from mcp_wcgw.types import AnyUrl
+from mcp_wcgw.client.session import ClientSession
+from mcp_wcgw.client.stdio import StdioServerParameters, stdio_client
 
 
 async def main():
