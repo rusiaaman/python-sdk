@@ -336,7 +336,7 @@ class CancellationNotification(Notification):
     long-running request.
     """
 
-    method: Literal["cancelled"]
+    method: Literal["notifications/cancelled"]
     params: CancelledParams
 
 
